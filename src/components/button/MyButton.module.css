@@ -1,0 +1,13 @@
+.myBtn{
+    padding: 20px 24px;
+    width: 300px;
+    height: 120px;
+    color:white;
+    font-size: 50px;
+    font-family: "Jersey 25", sans-serif;
+    font-weight: inherit;
+    background: transparent;
+    border: 3px solid white;
+    cursor: pointer;
+    border-radius: 50px;
+}
