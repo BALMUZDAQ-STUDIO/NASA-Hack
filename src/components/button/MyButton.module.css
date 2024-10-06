@@ -10,4 +10,9 @@
     border: 3px solid white;
     cursor: pointer;
     border-radius: 50px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+.myBtn:hover{
+    background-color: white;
+    color: black;
 }
