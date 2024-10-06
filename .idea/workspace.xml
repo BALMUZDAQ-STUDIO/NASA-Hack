@@ -5,13 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09f481d1-6529-4310-86f3-ec6d66ad13bc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/home.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/textures/2k_mercury.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/textures/2k_neptune.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/textures/2k_saturn.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/textures/2k_saturn_ring_alpha.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/textures/2k_uranus.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/textures/2k_venus_surface.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/textures/4k_venus_atmosphere.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/button/MyButton.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/MyButton.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/planets/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/planets/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/planets/planetsOrbits.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/planets/planetsOrbits.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/planets/starfield.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/planets/starfield.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +47,7 @@
     &quot;Node.js.index.js.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;route&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/tipok/WebstormProjects/NASA-Hack/src/assets/images&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/tipok/WebstormProjects/NASA-Hack/src&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -62,6 +69,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/src/assets/images" />
       <recent name="$PROJECT_DIR$/src/modules" />
     </key>

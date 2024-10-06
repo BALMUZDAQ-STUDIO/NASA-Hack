@@ -6,7 +6,7 @@ import MyButton from "./components/button/MyButton"
 import MemberCard from "./components/memberCard/MemberCard";
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Home from "./pages/home";
-import Planetarium from "./planets";
+import {Planetarium} from "./planets";
 function App() {
 
 
