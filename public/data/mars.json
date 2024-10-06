@@ -1,0 +1,44 @@
+{
+  "desc": "Mars, often referred to as the Red Planet, is the fourth planet from the Sun and is known for its reddish appearance, which is due to iron oxide (rust) on its surface. It has a thin atmosphere, primarily composed of carbon dioxide, with traces of nitrogen and argon. Mars features the largest volcano in the solar system, Olympus Mons, and has a diverse landscape that includes valleys, deserts, and polar ice caps. Water-ice has been found at its poles, and evidence suggests that liquid water may have existed on the surface in the past. Mars has two small moons, Phobos and Deimos, and its rotation period is similar to Earth's, at about 24.6 hours. A year on Mars lasts about 687 Earth days.",
+  "enc": [{
+    "name": "Equatorial diameter",
+    "value": "6779km"
+  },
+    {
+      "name": "Weight",
+      "value": "6.42*10^23kg"
+    },
+    {
+      "name": "Distance from the Sun",
+      "value": "227.9*10^6 km"
+    },
+    {
+      "name": "Rotation period",
+      "value": "24.6d"
+    },
+    {
+      "name": "R.p around the sun",
+      "value": "687d"
+    },
+    {
+      "name": "Surface gravity",
+      "value": "3.71 m/s^2"
+    },
+    {
+      "name": "Surface temperature",
+      "value": "20°C"
+    }],
+  "struc": [{
+    "name": "Crust",
+    "value": "Probably iron-sulfur, smaller in size than Earth."
+  },
+    {
+      "name": "Mantle",
+      "value": "Silicate, but less active than Earth's."
+    },
+    {
+      "name": "Core",
+      "value": "Composed mainly of basalt, it contains numerous craters and traces of ancient tectonic processes."
+    }]
+}
+

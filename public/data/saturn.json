@@ -1,0 +1,45 @@
+{
+  "desc": "Saturn is the sixth planet from the Sun and is well-known for its stunning rings, which are composed of ice particles, rocky debris, and dust. It is the second-largest planet in the solar system, with a diameter of about **116,460 kilometers** (about **72,366 miles**), making it a gas giant like Jupiter. Saturn's atmosphere is primarily composed of hydrogen and helium, with trace amounts of other gases, giving it a pale yellow color. The planet has a complex weather system, featuring high-speed winds and storms. Saturn has a large number of moons, with at least **83 confirmed**, including Titan, which is larger than the planet Mercury and has a dense atmosphere. A day on Saturn lasts about **10.7 hours**, while it takes approximately **29.5 Earth years** to complete one orbit around the Sun.",
+  "enc": [{
+    "name": "Equatorial diameter",
+    "value": "116464km"
+  },
+    {
+      "name": "Weight",
+      "value": "5.68×10^26kg"
+    },
+    {
+      "name": "Distance from the Sun",
+      "value": "1.429*10^6 km"
+    },
+    {
+      "name": "Rotation period",
+      "value": "10.7h"
+    },
+    {
+      "name": "R.p around the sun",
+      "value": "29.5 year"
+    },
+    {
+      "name": "Surface gravity",
+      "value": "10.44 m/s^2"
+    },
+    {
+      "name": "Surface temperature",
+      "value": "-178°C"
+    }],
+  "struc": [{
+    "name": "Crust",
+    "value": "Probably rocky or iron-stony."
+  },
+    {
+      "name": "Mantle",
+      "value": "The main part is metallic hydrogen, with admixtures of helium."
+    },
+    {
+      "name": "Core",
+      "value": "It consists of hydrogen and helium, with clouds of ammonia and other compounds."
+    }]
+}
+
+

@@ -89,11 +89,11 @@ const Home = () => {
                     flexDirection: "row",
                     margin: "0px 128px"
                 }}>
-                    <MemberCard name="Akhmedov Daler" logo={require("../assets/images/BALMUZDAQ_LOGO__v2.png")}
+                    <MemberCard name="Akhmedov Daler" logo={require("../assets/images/1.jpeg")}
                                 role="UX/UI designer"/>
-                    <MemberCard name="Chzan-Vin-Zin Maxim" logo={require("../assets/images/BALMUZDAQ_LOGO__v2.png")}
+                    <MemberCard name="Chzan-Vin-Zin Maxim" logo={require("../assets/images/5.jpeg")}
                                 role="Team Leader"/>
-                    <MemberCard name="Mailybaev Adilet" logo={require("../assets/images/BALMUZDAQ_LOGO__v2.png")}
+                    <MemberCard name="Mailybaev Adilet" logo={require("../assets/images/2.jpeg")}
                                 role="Frontend Developer"/>
 
                 </div>
@@ -105,11 +105,11 @@ const Home = () => {
                     marginBottom: "100px",
                     margin: "50px 128px"
                 }}>
-                    <MemberCard name="Sachev Andrey" logo={require("../assets/images/BALMUZDAQ_LOGO__v2.png")}
+                    <MemberCard name="Sachev Andrey" logo={require("../assets/images/4.jpeg")}
                                 role="Fullstack Developer"/>
-                    <MemberCard name="Oryntai Kaisar" logo={require("../assets/images/BALMUZDAQ_LOGO__v2.png")}
+                    <MemberCard name="Oryntai Kaisar" logo={require("../assets/images/3.jpeg")}
                                 role="Backend Developer"/>
-                    <MemberCard name="Meder Dzahanger" logo={require("../assets/images/BALMUZDAQ_LOGO__v2.png")}
+                    <MemberCard name="Meder Dzahanger" logo={require("../assets/images/6.JPG")}
                                 role="3D Designer"/>
                 </div>
             </div>

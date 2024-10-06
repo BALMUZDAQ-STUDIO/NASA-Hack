@@ -1,0 +1,44 @@
+{
+  "desc": "Venus is the second planet from the Sun and is similar in size and composition to Earth, often referred to as Earth's \"sister planet.\" However, its surface is extremely hostile, with temperatures averaging around **465°C (869°F)** due to a thick atmosphere rich in carbon dioxide, which creates a runaway greenhouse effect. The planet is covered in thick clouds of sulfuric acid, making its surface invisible from space. Venus has a slow, retrograde rotation, meaning it spins in the opposite direction to most planets, and a day on Venus is longer than a year. It has no moons or rings.",
+  "enc": [{
+    "name": "Equatorial diameter",
+    "value": "12104km"
+  },
+    {
+      "name": "Weight",
+      "value": "4.87*10^24kg"
+    },
+    {
+      "name": "Distance from the Sun",
+      "value": "108.2*10^6 km"
+    },
+    {
+      "name": "Rotation period",
+      "value": "243d"
+    },
+    {
+      "name": "R.p around the sun",
+      "value": "225d"
+    },
+    {
+      "name": "Surface gravity",
+      "value": "8.87 m/s^2"
+    },
+    {
+      "name": "Surface temperature",
+      "value": "467°C"
+    }],
+  "struc": [{
+    "name": "Crust",
+    "value": "An iron core surrounded by metallic silicate."
+  },
+    {
+      "name": "Mantle",
+      "value": "Composed of silicate rocks, possibly with the presence of magma in some areas."
+    },
+    {
+      "name": "Core",
+      "value": "Mostly basaltic, with volcanic formations and few traces of tectonic activity."
+    }]
+}
+

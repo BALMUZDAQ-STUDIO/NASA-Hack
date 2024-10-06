@@ -1,0 +1,44 @@
+{
+  "desc": "Mercury is the smallest planet in our solar system and the one closest to the Sun. It has an extremely thin atmosphere, mainly composed of oxygen, sodium, and hydrogen, and experiences extreme temperature variations, ranging from very hot during the day (up to 430°C or 800°F) to extremely cold at night (-180°C or -290°F). Mercury has a heavily cratered surface, resembling Earth's moon, and no moons or rings. Its orbit is highly elliptical, and a day on Mercury (one full rotation on its axis) is longer than a year (its complete orbit around the Sun).",
+  "enc": [{
+    "name": "Equatorial diameter",
+    "value": "4880km"
+  },
+    {
+      "name": "Weight",
+      "value": "3.30*10^23kg"
+    },
+    {
+      "name": "Distance from the Sun",
+      "value": "57.9*10^6 km"
+    },
+    {
+      "name": "Rotation period",
+      "value": "59d"
+    },
+    {
+      "name": "R.p around the sun",
+      "value": "88d"
+    },
+    {
+      "name": "Surface gravity",
+      "value": "3.7 m/s^2"
+    },
+    {
+      "name": "Surface temperature",
+      "value": "427°C"
+    }],
+  "struc": [{
+    "name": "Crust",
+    "value": "The bulk of the metallic part, consisting mainly of iron, occupies about 75% of the planet's radius."
+  },
+    {
+      "name": "Mantle",
+      "value": "Thin, composed mainly of silicates."
+    },
+    {
+      "name": "Core",
+      "value": "Also thin, with many craters and little tectonic activity."
+    }
+    ]
+}

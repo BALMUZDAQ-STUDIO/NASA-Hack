@@ -1,0 +1,45 @@
+{
+  "desc": "Neptune is the eighth and farthest planet from the Sun in our solar system, classified as an ice giant. It has a diameter of about **49,244 kilometers** (about **30,598 miles**), making it slightly smaller than Uranus. Neptune is known for its striking blue color, which is primarily due to the absorption of red light by methane in its atmosphere. \n\nThe planet has a dynamic atmosphere, featuring the fastest winds in the solar system, reaching speeds of up to **2,100 kilometers per hour** (about **1,300 miles per hour**). Neptune has a faint ring system and at least **14 known moons**, with Triton being the largest, which is unique for its retrograde orbit. A day on Neptune lasts about **16 hours**, while it takes approximately **165 Earth years** to complete one orbit around the Sun.",
+  "enc": [{
+    "name": "Equatorial diameter",
+    "value": " 49244km"
+  },
+    {
+      "name": "Weight",
+      "value": "1.02×10^26kg"
+    },
+    {
+      "name": "Distance from the Sun",
+      "value": "4495*10^6 km"
+    },
+    {
+      "name": "Rotation period",
+      "value": "16.1h"
+    },
+    {
+      "name": "R.p around the sun",
+      "value": "165 year"
+    },
+    {
+      "name": "Surface gravity",
+      "value": "11.15 m/s^2"
+    },
+    {
+      "name": "Surface temperature",
+      "value": "-214°C"
+    }],
+  "struc": [{
+    "name": "Crust",
+    "value": "Like Uranus, it is likely composed of rocky and icy materials."
+  },
+    {
+      "name": "Mantle",
+      "value": "Contains water, ammonia and methane in the form of ice, as well as silicate minerals."
+    },
+    {
+      "name": "Core",
+      "value": "It consists mainly of hydrogen, helium and methane."
+    }]
+}
+
+

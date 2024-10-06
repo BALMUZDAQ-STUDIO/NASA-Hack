@@ -1,0 +1,21 @@
+{
+  "desc": "The Sun is the central star of our solar system and is primarily composed of hydrogen (about 74%) and helium (about 24%), with trace amounts of heavier elements. It has a diameter of approximately **1.39 million kilometers** (about **864,000 miles**), making it about 109 times wider than Earth. The Sun generates energy through nuclear fusion in its core, where hydrogen atoms are fused into helium, releasing vast amounts of energy in the form of light and heat.\n\nThis energy is essential for life on Earth, driving our climate and weather systems. The Sun has a surface temperature of about **5,500 degrees Celsius** (about **9,932 degrees Fahrenheit**) and a core temperature that can reach **15 million degrees Celsius** (about **27 million degrees Fahrenheit**). The Sun has an approximate age of **4.6 billion years** and is expected to remain stable for several billion more years before transitioning into a red giant and eventually shedding its outer layers to form a planetary nebula, leaving behind a white dwarf.",
+  "enc": [{
+    "name": "Equatorial diameter",
+    "value": "  1.39*10^6km"
+  },
+    {
+      "name": "Weight",
+      "value": "1.989×10^30kg"
+    },
+    {
+      "name": "Surface gravity",
+      "value": "274 m/s^2"
+    },
+    {
+      "name": "Surface temperature",
+      "value": "5500°C"
+    }]
+}
+
+

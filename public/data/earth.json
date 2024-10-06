@@ -1,0 +1,47 @@
+{
+  "desc": "Earth is the only planet known to harbor life, with a unique combination of land, water, and atmosphere. Its diversity of environments, from forests to deserts to oceans, has supported a vast array of life forms for billions of years.",
+  "enc": [{
+    "name": "Equatorial diameter",
+    "value": "12756km"
+  },
+    {
+      "name": "Weight",
+      "value": "6*10^24kg"
+    },
+    {
+      "name": "Distance from the Sun",
+      "value": "150*10^6 km"
+    },
+    {
+      "name": "Rotation period",
+      "value": "23h 53m"
+    },
+    {
+      "name": "R.p around the sun",
+      "value": "1 year"
+    },
+    {
+      "name": "Surface gravity",
+      "value": "9.8 m/s^2"
+    },
+    {
+      "name": "Surface temperature",
+      "value": "15°C"
+    }],
+  "struc": [{
+    "name": "Crust",
+    "value": "The outermost solid layer where all life exists."
+  },
+    {
+      "name": "Mantle",
+      "value": "The thick layer beneath the crust, consisting of slowly moving semi-solid rock."
+    },
+    {
+      "name": "Outer core",
+      "value": "A liquid layer made of iron and nickel, responsible for generating Earth's magnetic field."
+    },
+    {
+      "name": "Inner core",
+      "value": "The solid innermost layer, composed of iron and nickel, under immense pressure."
+    }]
+}

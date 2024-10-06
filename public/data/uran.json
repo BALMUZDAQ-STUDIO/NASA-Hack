@@ -1,0 +1,45 @@
+{
+  "desc": "Uranus is the seventh planet from the Sun and is classified as an ice giant due to its unique composition, which includes water, ammonia, and methane ice. It has a diameter of about **50,724 kilometers** (about **31,518 miles**), making it the third-largest planet in the solar system. Uranus is notable for its distinctive blue-green color, caused by the presence of methane in its atmosphere, which absorbs red light. \n\nOne of the most striking features of Uranus is its extreme axial tilt of about **98 degrees**, which means it essentially rolls along its orbit, resulting in unusual seasonal variations. The planet has a faint ring system and at least **27 known moons**, with the largest being Titania, Oberon, Miranda, Ariel, and Umbriel. A day on Uranus lasts about **17.2 hours**, while it takes approximately **84 Earth years** to complete one orbit around the Sun.",
+  "enc": [{
+    "name": "Equatorial diameter",
+    "value": "50724km"
+  },
+    {
+      "name": "Weight",
+      "value": "8.68×10^25kg"
+    },
+    {
+      "name": "Distance from the Sun",
+      "value": "2871*10^6 km"
+    },
+    {
+      "name": "Rotation period",
+      "value": "17.2h"
+    },
+    {
+      "name": "R.p around the sun",
+      "value": "84 year"
+    },
+    {
+      "name": "Surface gravity",
+      "value": "8.69 m/s^2"
+    },
+    {
+      "name": "Surface temperature",
+      "value": "-224°C"
+    }],
+  "struc": [{
+    "name": "Crust",
+    "value": "Presumably rocky, with high water, ammonia and methane content."
+  },
+    {
+      "name": "Mantle",
+      "value": "It consists of aqueous ammonia and silicates."
+    },
+    {
+      "name": "Core",
+      "value": "Mainly hydrogen and helium, with some methane, which gives the planet a bluish color."
+    }]
+}
+
+

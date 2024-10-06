@@ -4,7 +4,7 @@ const MemberCard = ({name,logo, role}) => {
     return (
         <div className={classes.main}>
             <p className={classes.p1_name}>{name}</p>
-            <img className={classes.logo_img} src={logo}/>
+            <img className={classes.logo_img} src={logo} style ={{ objectFit: "cover", size: "6rem"}}/>
             <p className={classes.p1_name} style={{color:"#747474", fontSize:"25px"}}>{role}</p>
         </div>
     );

@@ -1,0 +1,44 @@
+{
+  "desc": "Jupiter is the largest planet in our solar system and is classified as a gas giant. It is known for its massive size, having a diameter of about **139,822 kilometers** (86,881 miles), which is more than 11 times that of Earth. Jupiter has a thick atmosphere composed mainly of hydrogen and helium, along with trace amounts of methane, ammonia, and water vapor. It is famous for its Great Red Spot, a giant storm larger than Earth that has been raging for centuries. Jupiter has a strong magnetic field and an extensive system of rings, as well as at least **79 known moons**, including the four largest, known as the Galilean moons: Io, Europa, Ganymede, and Callisto. A day on Jupiter lasts about **10 hours**, while its orbital period around the Sun is approximately **12 Earth years**.",
+  "enc": [{
+    "name": "Equatorial diameter",
+    "value": "139822km"
+  },
+    {
+      "name": "Weight",
+      "value": "1.90*10^27kg"
+    },
+    {
+      "name": "Distance from the Sun",
+      "value": "778.5*10^6 km"
+    },
+    {
+      "name": "Rotation period",
+      "value": "9.9h"
+    },
+    {
+      "name": "R.p around the sun",
+      "value": "12 year"
+    },
+    {
+      "name": "Surface gravity",
+      "value": "24.79 m/s^2"
+    },
+    {
+      "name": "Surface temperature",
+      "value": "-147°C"
+    }],
+  "struc": [{
+    "name": "Crust",
+    "value": "Probably rocky, surrounded by metallic hydrogen."
+  },
+    {
+      "name": "Mantle",
+      "value": "The bulk consists of metallic hydrogen and helium, with possible presence of ammonia and other compounds."
+    },
+    {
+      "name": "Core",
+      "value": "Consists of hydrogen, helium, methane and other gases, with powerful vortices and storms."
+    }]
+}
+

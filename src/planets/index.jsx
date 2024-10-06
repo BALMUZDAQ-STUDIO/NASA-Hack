@@ -1,45 +1,144 @@
 import * as THREE from 'three';
 import * as TWEEN from 'tween';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import "./Style.css";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef , useState } from "react";
 import React, { Component } from 'react';
 
 import getStarfield from "./starfield";
 // import createOrbitEat from "./planetsOrbits"
 
-let time_delay = 0.05;
 
-class TimeBooster extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {value: 0.1};
+let time_delay = 0.1;
 
-		this.handleChange = this.handleChange.bind(this);
+
+function GenTable(props) {
+// Check if data is available and is an array
+	if (!props.data || !Array.isArray(props.data)) {
+	    return <div>No data available</div>; // Fallback in case data is not an array
 	}
 
-	handleChange(event) {
-		this.setState({value: event.target.value});
-		time_delay = event.target.value;
-	}
+	const listItems = props.data.map((attr, index) => (
+	    <React.Fragment key={index} >
+	        <dt style={{ display: 'inline', color: '#ffffff', marginRight: '3rem' , fontSize: "1.5rem" , marginBottom: "10px"}}>{attr.name}</dt>
+	        <dd style={{ display: 'inline',  fontWeight: 'bold',  color: '#cccccc', marginRight: '20px' , fontSize: "1.5rem" }}>{attr.value}</dd>
+	        <br/>
+	    </React.Fragment>
+	));
 
-	render() {
-		return (
-			<div>
-				<h1>Ускорение</h1>
-			
-				<input type="range" step="0.01" min="0" max="5" value={this.state.value} onChange={this.handleChange}/>
-			</div>
-		);
-	}
+	return <dl style={{ }}>{listItems}</dl>;
 }
 
-function Planetarium() {
+function hidePlanetInfo(planetName) {
+	time_delay = 0.1;
+    const infoContainer = document.getElementById("cardsCont");
+    const planetCard = document.getElementById(planetName);
+    infoContainer.style.display = "none";
+    planetCard.style.display = "none";
+}
+
+function hideAllPlanetInfo() {
+	time_delay = 0.1;
+    const infoContainer = document.getElementById("cardsCont");
+    const planetCards = infoContainer.childNodes;
+    planetCards.forEach(x => x.style.display = "none");
+
+}
+
+function PlanetCard(props) {
+    const [activeTab, setActiveTab] = useState('desc');
+    const [desc, setDesc] = useState('');
+    const [enc, setEnc] = useState([]); // Ensure enc is an array
+    const [struc, setStruc] = useState('');
+
+    const fetchData = async () => {
+        try {
+            const response = await fetch(props.data);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const jsonData = await response.json();
+            // Debugging output to check the fetched data
+            console.log("Fetched data:", jsonData);
+            setDesc(jsonData.desc);
+            setEnc(jsonData.enc); // This should be an array
+            setStruc(jsonData.struc);
+        } catch (err) {
+            console.error('Fetch error:', err);
+        }
+    };
+
+  	useEffect(() => {
+  		
+  	});
+
+    useEffect(() => {
+        fetchData();
+    }, [props.data]);
+
+    const renderContent = () => {
+        switch (activeTab) {
+            case 'desc':
+                return <div>{desc}</div>;
+            case 'enc':
+                return <GenTable data={enc} />;
+            case 'struc':
+                return <GenTable data={struc} />;
+            default:
+                return null;
+        }
+    };
+
+    return (
+        <div style={{
+        		flexFlow: "column nowrap"
+        }} class="cards" id={props.name+"Card"}>
+            <div style={{ display: "flex", flexFlow: "row nowrap" , justifyContent: "space-around" , alignItems: "center" }}>
+            	<button
+            		style= {{
+            			border: 0,
+            			background: "none",
+            		}} 
+            	 onClick={ () =>{ hidePlanetInfo(props.name+"Card") } }>
+            		<img style={{ size: "1.5rem" }} src="./back.png" />
+            	</button> 
+                <h1 style={{ color: "white", fontFamily: "Arial" , fontSize: "3rem"}}>{props.name}</h1>
+            </div>
+            <div style={{ color: "white", fontFamily: "Arial", display: "flex", flexFlow: "row nowrap", alignItems: "center", justifyContent: "space-around" }}>
+                <span onClick={() => setActiveTab('desc')} style={{ borderBottom: activeTab === 'desc' ? '2px solid #ffffff' : 'none' }}>Description</span>
+                <span onClick={() => setActiveTab('enc')} style={{ borderBottom: activeTab === 'enc' ? '2px solid #ffffff' : 'none' }}>Encyclopedia</span>
+                <span onClick={() => setActiveTab('struc')} style={{ borderBottom: activeTab === 'struc' ? '2px solid #ffffff' : 'none' }}>Structure</span>
+            </div>
+
+            <div style={{ 	color: "white" ,
+        					fontFamily: "Arial"}}>
+                {renderContent()}
+            </div>
+        </div>
+    );
+}
+
+
+
+
+function Planetarium(props) {
 	const refContainer = useRef(null);
 
-
+	const [value, setValue] = useState(0.01); 
+       
+    function changeValue(event) { 
+        setValue(event.target.value);  
+    }
 
 	useEffect(() => {
+
+		document.title = `Привет ${value}`;
+
+		if (refContainer.current && refContainer.current.firstChild) {
+        	refContainer.current.removeChild(refContainer.current.firstChild);
+        }
 
 		// Конфигурация размеров холста
 		const w = window.innerWidth;
@@ -53,9 +152,11 @@ function Planetarium() {
 		renderer.setSize(w, h);
 		renderer.toneMapping = THREE.ACESFilmicToneMapping;
 		renderer.outputColorSpace = THREE.LinearSRGBColorSpace;
+		renderer.setPixelRatio(window.devicePixelRatio);
 
 
-
+		time_delay = 0.1;
+		// console.log(time_delay);
 
 
 
@@ -79,58 +180,66 @@ function Planetarium() {
 
 		    if (intersects.length > 0) {
 		        const selectedPlanet = intersects[0].object;
-		        selectedPlanet.position.x += 100;
-		        console.log(selectedPlanet);
+		        if(!selectedPlanet.isPlanet) {
+		        	return;
+		        }
+
+		        hideAllPlanetInfo();
 
 		        // Отображаем информацию о выбранной планете
 		        showPlanetInfo(selectedPlanet.name);
 
 		        // Плавно перемещаем камеру к выбранной планете
+		        time_delay = 0;
 		        moveToPlanet(selectedPlanet);
 		    }
 		}
 
 		// Функция для плавного перемещения камеры к планете
 		function moveToPlanet(planet) {
-		    // Начальная позиция камеры
-		    const initialPosition = {
-		        x: camera.position.x,
-		        y: camera.position.y,
-		        z: camera.position.z
-		    };
+			const initialPosition = {
+				x: camera.position.x,
+				y: camera.position.y,
+				z: camera.position.z
+			};
 
-		    // Конечная позиция камеры - немного отодвинута от планеты, чтобы видеть её полностью
-		    const targetPosition = {
-		        x: planet.position.x,
-		        y: planet.position.y + 10, // немного выше, чтобы видеть сверху
-		        z: planet.position.z + 10 // немного дальше, чтобы видеть планету целиком
-		    };
+			// Настройка конечной позиции с учётом безопасного расстояния
+			const targetDistance = 15; // регулируйте в зависимости от масштаба сцены
+			const direction = new THREE.Vector3()
+				.subVectors(camera.position, planet.position)
+				.normalize()
+				.multiplyScalar(targetDistance);
 
-		    // Настройки Tween
-		    new TWEEN.Tween(initialPosition)
-		        .to(targetPosition, 2000) // Длительность анимации в миллисекундах
-		        .easing(TWEEN.Easing.Quadratic.Out) // Метод плавности
-		        .onUpdate(() => {
-		            camera.position.set(initialPosition.x, initialPosition.y, initialPosition.z);
-		            camera.lookAt({	'x': planet.position.x, 
-		            				'y': planet.position.y, 
-		            				'z': planet.position.z}); // Камера направлена на планету
-		        })
-		        .start();
+			const targetPosition = {
+				x: planet.position.x + direction.x,
+				y: planet.position.y + direction.y, // немного выше
+				z: planet.position.z + direction.z // немного дальше
+			};
+
+			// Настройки Tween для плавного перемещения камеры
+			new TWEEN.Tween(initialPosition)
+				.to(targetPosition, 2000)
+				.easing(TWEEN.Easing.Quadratic.Out)
+				.onUpdate(() => {
+					camera.position.set(initialPosition.x, initialPosition.y, initialPosition.z);
+					camera.lookAt(new THREE.Vector3(planet.position.x, planet.position.y, planet.position.z));
+				})
+				.start();
+
+			// Убедитесь, что матрица проекции камеры обновляется
+			camera.updateProjectionMatrix();
+
+
 		}
 
 		function showPlanetInfo(planetName) {
-			const infoContainer = document.getElementById("planetInfo");
-			const nameElement = document.getElementById("planetName");
-			const descriptionElement = document.getElementById("planetDescription");
+			const infoContainer = document.getElementById("cardsCont");
+			console.log(planetName+"Card");
+			const nameElement = document.getElementById(planetName+"Card");
 
-			// if (planetData[planetName]) {
-			// 	nameElement.textContent = planetData[planetName].name;
-			// 	descriptionElement.textContent = planetData[planetName].description;
+			infoContainer.style.display = "block";
+			nameElement.style.display = "flex";
 
-			// 	// Показать контейнер с информацией
-			// 	infoContainer.classList.add("visible");
-			// }
 		}
 
 		// Функция для скрытия информации
@@ -186,7 +295,7 @@ function Planetarium() {
 				"arg_peri": 102.94719,
 				"tau": 114.208,
 				"P": 365.256363,
-				"speed": 1
+				"speed": 30
 			},
 			"Mars": {
 				"a": 1.523679,
@@ -266,8 +375,8 @@ function Planetarium() {
 			neptune_b: "./textures/2k_neptune.jpg",
 			mercury: "./textures/2k_mercury.jpg",
 			mercury_b: "./textures/2k_mercury.jpg",
-			venus: "./textures/2k_venus.jpg",
-			venus_b: "./textures/2k_venus.jpg",
+			venus: "./textures/2k_venus_surface.jpg",
+			venus_b: "./textures/2k_venus_surface.jpg",
 			saturn: "./textures/2k_saturn.jpg",
 			saturn_b: "./textures/2k_saturn.jpg"
 		}
@@ -316,6 +425,8 @@ function Planetarium() {
 
 			const start_orbit = createOrbitPoints(orbit_data)[0];
 			planetMesh.position.set(start_orbit[0]*20, start_orbit[1]*20, start_orbit[2]*20);
+			planetMesh.isPlanet = true;
+			planetMesh.name = name;
 
 			return planetMesh;
 		}
@@ -323,7 +434,7 @@ function Planetarium() {
 		// Функция для обновления позиции планеты на орбите
 		function updatePlanetPosition(planetGroup,  orbitParams, time) {
 			const orbitPoints = createOrbitPoints(orbitParams);
-		    const moment = Math.floor((time * orbitParams.speed) % orbitPoints.length); // Индекс точки на орбите
+		    const moment = Math.floor((time * orbitParams.speed/10) % 1000); // Индекс точки на орбите
 		    const [x, y, z] = orbitPoints[moment].map(coord => coord * 20); // Увеличиваем масштаб
 			const rotatedY = y * Math.cos(Math.PI / 2) - z * Math.sin(Math.PI / 2);
     		const rotatedZ = y * Math.sin(Math.PI / 2) + z * Math.cos(Math.PI / 2);
@@ -479,17 +590,6 @@ function Planetarium() {
 		}
 
 
-		// const planets_orbit_calcul = {
-		// 	mercury: createOrbitPoints(data_planets.Earth),
-		// 	venus: createOrbitPoints(data_planets.Earth),
-		// 	earth: createOrbitPoints(data_planets.Earth),
-		// 	mars: createOrbitPoints(data_planets.Earth),
-		// 	saturn: createOrbitPoints(data_planets.Earth),
-		// 	jupiter: createOrbitPoints(data_planets.Earth),
-		// 	neptune: createOrbitPoints(data_planets.Earth),
-		// 	uran: createOrbitPoints(data_planets.Earth)
-		// }
-
 		//--------- Солнце ---------//
 
 		// Создание Солнца с эффектом свечения
@@ -505,6 +605,7 @@ function Planetarium() {
 
 
 			planetMesh.position.set(0, 0, 0);
+			planetMesh.name = "Sun"
 
 			sunGroup = planetMesh;
 		}
@@ -531,7 +632,7 @@ function Planetarium() {
 				bumpScale: 0.04,
 			},
 			orbit_data: data_planets.Earth,
-			size:2
+			size:2.5
 		});
 		scene.add(earthGroup);
 
@@ -564,7 +665,7 @@ function Planetarium() {
 				bumpScale: 0.02,
 			},
 			orbit_data: data_planets.Mars,
-			size:0.0532
+			size:2
 		});
 		planets.push(marsGroup);
 
@@ -589,7 +690,7 @@ function Planetarium() {
 				bumpScale: 0.03,
 			},
 			orbit_data: data_planets.Jupiter,
-			size:1.1209
+			size:3
 		});
 		planets.push(jupiterGroup);
 
@@ -613,7 +714,7 @@ function Planetarium() {
 				bumpScale: 0.03,
 			},
 			orbit_data: data_planets.Mercury,
-			size:0.0383
+			size:1.5
 		});
 		planets.push(mercuryGroup);
 
@@ -629,7 +730,7 @@ function Planetarium() {
 		//--------- Венера ---------//
 
 		const venusGroup = createPlanetGroup({
-			name: "venus",
+			name: "Venus",
 			position: {  },
 			textures: {
 				map: textures.venus,
@@ -637,7 +738,7 @@ function Planetarium() {
 				bumpScale: 0.03,
 			},
 			orbit_data: data_planets.Venus,
-			size:0.0949
+			size:1.5
 		});
 		planets.push(venusGroup);
 
@@ -661,7 +762,7 @@ function Planetarium() {
 				bumpScale: 0.03,
 			},
 			orbit_data: data_planets.Saturn,
-			size:0.9449
+			size:2.6
 		});
 		planets.push(saturnGroup);
 
@@ -684,7 +785,7 @@ function Planetarium() {
 				bumpScale: 0.03,
 			},
 			orbit_data: data_planets.Neptune,
-			size:0.3883
+			size:2
 		});
 		planets.push(neptuneGroup);
 
@@ -707,7 +808,7 @@ function Planetarium() {
 				bumpScale: 0.03,
 			},
 			orbit_data: data_planets.Uran,
-			size: 4.007
+			size: 8
 		});
 		planets.push(uranGroup);
 
@@ -781,6 +882,16 @@ function Planetarium() {
 			updatePlanetPosition(venusGroup, data_planets.Venus , time);
 			updatePlanetPosition(mercuryGroup, data_planets.Mercury , time);
 
+			earthGroup.rotation.y += 0.01;
+			marsGroup.rotation.y += 0.01;
+			jupiterGroup.rotation.y += 0.01;
+			neptuneGroup.rotation.y += 0.01;
+			saturnGroup.rotation.y += 0.01;
+			uranGroup.rotation.y += 0.01;
+			venusGroup.rotation.y += 0.01;
+			mercuryGroup.rotation.y += 0.01;
+
+
 			TWEEN.update();
 			
 
@@ -788,13 +899,33 @@ function Planetarium() {
 		}
 
 		animate();
-	}, []);
+	});
 
 	return (
 		<>
+		<div id="cardsCont" style={{	position: "absolute",
+						left: 0,
+						top: "20%",
+						height: "60%",
+						width: "25%",
+						background: "black",
+						overflowX: "hidden",
+						display: "none"}}>
+			<PlanetCard  id="EarthCard" name="Earth" data="./data/Earth.json"/>
+			<PlanetCard  id="MarsCard" name="Mars" data="./data/Mars.json"/>
+			<PlanetCard  id="SaturnCard" name="Saturn" data="./data/Saturn.json"/>
+			<PlanetCard  id="JupiterCard" name="Jupiter" data="./data/Jupiter.json"/>
+			<PlanetCard  id="VenusCard" name="Venus" data="./data/Venus.json"/>
+			<PlanetCard  id="MercuryCard" name="Mercury" data="./data/Mercury.json"/>
+			<PlanetCard  id="NepruneCard" name="Neprune" data="./data/Neptune.json"/>
+			<PlanetCard  id="UranCard" name="Uran" data="./data/Uran.json"/>
+			<PlanetCard  id="SunCard" name="Sun" data="./data/Sun.json"/>
+
+		</div>
+
 		<div ref={refContainer}></div>
 
-		<TimeBooster/>
+
 		</>
 	);
 }
@@ -805,81 +936,7 @@ function Planetarium() {
 
 
 
-function PlanetCard(props) {
-
-	function genTable(data) {
-		const listItems = data.map((attr) => {
-			return (<> <dt> {attr.name} </dt>  <dd> {attr.value} </dd> </>);
-		});
-
-		return (<dl>{listItems}</dl>);
-	}
-
-
-	const data = require(props.data);
-
-	const desc = data.desc;
-
-	const enc = data.enc;
-
-	const struc = data.structure;
-
-	let desc_f = true;
-	let enc_f = false;
-	let struc_f = false;
-
-
-	
-	useEffect(() => {
-
-		const data = require(props.data);
-
-		const desc = data.desc;
-
-		const enc = data.enc;
-
-		const struc = data.structure;
-
-		let desc_f = true;
-		let enc_f = false;
-		let struc_f = false;
-
-		
-	});
-
-	return (
-			
-		<div>
-			<h1>{props.name}</h1> 	
-
-			<div>
-				<span onClick={()=> {desc_f = true;enc_f = false;struc_f = false;}}>Description</span>
-				<span onClick={()=> {desc_f = false;enc_f = true;struc_f = false;}}>Encyclopedia</span>
-				<span onClick={()=> {desc_f = false;enc_f = false;struc_f = true;}}>Structure</span>
-			</div>
-
-			<div>
-				{desc_f ? (<div>{desc}</div>) : (<></>)}
-				
-				{enc_f ? (
-					<div>
-						{genTable(enc)}
-					</div>
-					) : (<></>)
-				}
-
-				{struc_f ? (
-					<div>
-						<p>{struc}</p>
-					</div>
-					) : (<></>)
-				}
-			</div>
-		</div>
-
-	);
-}
 
 
 
-export { Planetarium, PlanetCard };
+export { Planetarium, PlanetCard};
