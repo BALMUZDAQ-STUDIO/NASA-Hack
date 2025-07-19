@@ -2,7 +2,7 @@
 
 <h1 align="center">Orrery Web App</h1>
 
-<img src="[https://pouch.jumpshare.com/preview/SL2zbJm9aOVBwOWY5A2yaPCMjtE17QwTmr_6A_mwDVcW9f0CwBD3jYg8t8ZrtsbAKjxxYyELUlI4F4uQHZkJfEHQLZq4uKMO1SYBTczpxyY](https://www.google.com/url?sa=i&url=https%3A%2F%2Fdomain.earth%2Fnasa-international-space-apps-challenge-aims-to-improve-life-on-earth%2F&psig=AOvVaw22VirfmcFv2r-dCItFMkQQ&ust=1753000067275000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCNiOt6fAyI4DFQAAAAAdAAAAABAE)" alt="Alt text" width="400" align="right"/>
+<img src="https://pacificspacecenter.com/wp-content/uploads/2023/09/365088704_674173744749041_7857677441248601185_n-980x980.jpg" alt="Alt text" width="400" align="right"/>
 
 
 
