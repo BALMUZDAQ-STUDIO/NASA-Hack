@@ -2,7 +2,7 @@
 
 <h1 align="center">Orrery Web App</h1>
 
-<img src="https://pacificspacecenter.com/wp-content/uploads/2023/09/365088704_674173744749041_7857677441248601185_n-980x980.jpg" alt="Alt text" width="400" align="right"/>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxyt84wQ_5cTLN0jqSYxLms_7SxqK1TOKbUA&s" alt="Alt text" width="400" align="right"/>
 
 
 
