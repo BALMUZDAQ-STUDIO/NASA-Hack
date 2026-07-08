@@ -6,7 +6,7 @@
 
 **Orrery Web App** is a web application that visually simulates the solar system, with detailed displays of planets, asteroids, and planetary characteristics. It offers an interactive, educational way to explore our celestial neighborhood.
 
-🏆 **NASA Space Apps Challenge 2024** — Global Nominee, "Galactic Problem Solver" challenge.
+**NASA Space Apps Challenge 2024** — Global Nominee, "Galactic Problem Solver" challenge.
 
 **Features**
 
